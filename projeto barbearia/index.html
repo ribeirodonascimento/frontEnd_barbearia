@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbearia Premium - Agendamento</title>
+    <meta name="description" content="Agende seu horário na melhor barbearia da cidade" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <svg class="header-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="12" r="1"></circle>
+          <path d="M9 12V6.07c0-.8.8-1.07 1.5-.8l9 3.74c.6.25.6 1.15 0 1.4L10.5 18.73c-.7.27-1.5 0-1.5-.8V12Z"></path>
+        </svg>
+        <h1 class="header-title">Barbearia Premium</h1>
+      </div>
+      <p class="header-subtitle">Tradição e qualidade em cada corte</p>
+    </header>
+
+    <!-- Services -->
+    <section class="services-section">
+      <div class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card" data-service="corte-tradicional">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=300&fit=crop" alt="Corte Tradicional">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Corte Tradicional</h3>
+              <p class="service-description">Corte clássico com acabamento profissional e lavagem</p>
+              <div class="service-footer">
+                <span class="service-price">R$ 35,00</span>
+                <button class="service-button">Selecionar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card" data-service="barba-completa">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=300&fit=crop" alt="Barba Completa">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Barba Completa</h3>
+              <p class="service-description">Aparar, desenhar e finalizar barba com produtos premium</p>
+              <div class="service-footer">
+                <span class="service-price">R$ 25,00</span>
+                <button class="service-button">Selecionar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card" data-service="combo-premium">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&h=300&fit=crop" alt="Combo Premium">
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">Combo Premium</h3>
+              <p class="service-description">Corte + Barba + Sobrancelha + Produtos de qualidade</p>
+              <div class="service-footer">
+                <span class="service-price">R$ 55,00</span>
+                <button class="service-button">Selecionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-prompt" id="bookingPrompt">
+          <div class="prompt-card">
+            <svg class="prompt-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <h3>Selecione um Serviço</h3>
+            <p>Primeiro escolha o serviço que deseja agendar</p>
+          </div>
+        </div>
+
+        <div class="booking-form-container" id="bookingForm" style="display: none;">
+          <div class="form-card">
+            <div class="form-header">
+              <svg class="form-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <h3>Agendar Horário</h3>
+              <p>Preencha os dados para confirmar seu agendamento</p>
+            </div>
+            <form id="appointmentForm">
+              <div class="form-group">
+                <label for="name">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  Nome Completo
+                </label>
+                <input type="text" id="name" placeholder="Digite seu nome" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  Telefone/WhatsApp
+                </label>
+                <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+              </div>
+
+              <div class="form-group">
+                <label for="date">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  Data (Segunda a Sábado)
+                </label>
+                <input type="date" id="date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="time">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                  Horário
+                </label>
+                <select id="time" required>
+                  <option value="">Selecione o horário</option>
+                  <optgroup label="Manhã (8h às 11h30)">
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                  </optgroup>
+                  <optgroup label="Tarde (13h às 18h30)">
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="info-box">
+                <p><strong>Funcionamento:</strong><br>
+                Segunda a Sábado: 8h às 11h30 e 13h às 18h30<br>
+                <span style="color: #dc2626;">Fechado aos domingos</span></p>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                Confirmar via WhatsApp
+              </button>
+
+              <p class="form-note">Você será redirecionado para o WhatsApp para confirmação final</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Localização
+            </h3>
+            <p>Rua das Flores, 123<br>
+            Centro - São Paulo/SP<br>
+            CEP: 01234-567</p>
+          </div>
+          
+          <div class="footer-section">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+              </svg>
+              Funcionamento
+            </h3>
+            <p>Segunda a Sábado<br>
+            8h às 11h30<br>
+            13h às 18h30</p>
+          </div>
+          
+          <div class="footer-section">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              Contato
+            </h3>
+            <p>(11) 99999-9999<br>
+            contato@barbeariapremium.com</p>
+            <div class="social-icons">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2024 Barbearia Premium. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
